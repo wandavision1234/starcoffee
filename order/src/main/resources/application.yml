@@ -31,16 +31,14 @@ spring:
         event-out:
           destination: starcoffee
           contentType: application/json
-
 feign:
   hystrix:
     enabled: true
 
 hystrix:
   command:
-    default:
-      execution.isolation.thread.timeoutInMilliseconds: 1000
-
+  default:
+      execution.isolation.thread.timeoutInMilliseconds: 1000          
 logging:
   level:
     org.hibernate.type: trace
@@ -50,7 +48,7 @@ server:
   
 api:
   payment:
-    url: http://payments:8082
+    url: http://localhost:8082 #    url: http://payment:8082
 ---
 
 spring:
@@ -76,3 +74,22 @@ spring:
         event-out:
           destination: starcoffee
           contentType: application/json
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+  default:
+      execution.isolation.thread.timeoutInMilliseconds: 1000          
+logging:
+  level:
+    org.hibernate.type: trace
+    org.springframework.cloud: debug
+server:
+  port: 8081
+  
+api:
+  payment:
+    url: http://localhost:8082 #    url: http://payment:8082          
