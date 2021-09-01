@@ -23,6 +23,13 @@ public class Payment {
         BeanUtils.copyProperties(this, paymentApporved);
         paymentApporved.publishAfterCommit();
 
+        try { // 피호출 서비스(결제:pay) 의 임의 부하 처리 - 400 밀리에서 증감 220 밀리 정도 왔다갔다 하게
+            Thread.currentThread().sleep((long) (400 + Math.random() * 220));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
     }
     @PostUpdate
     public void onPostUpdate(){
