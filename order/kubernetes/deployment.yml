@@ -16,14 +16,14 @@ spec:
     spec:
       containers:
         - name: order
-          image: 980880891166.dkr.ecr.ap-northeast-2.amazonaws.com/starcoffee-order:13
+          image: 980880891166.dkr.ecr.ap-northeast-2.amazonaws.com/starcoffee-order:15
           ports:
             - containerPort: 8080
-          resources:
-            limits:
-              cpu: 500m
-            requests:
-              cpu: 200m    
+          #resources:
+          #  limits:
+          #    cpu: 500m
+          #  requests:
+          #    cpu: 200m    
           readinessProbe:
             httpGet:
               path: '/actuator/health'
