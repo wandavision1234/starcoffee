@@ -48,7 +48,7 @@ server:
   
 api:
   payment:
-    url: http://payment:8082
+    url: http://payment:8080
 ---
 
 spring:
@@ -92,4 +92,4 @@ server:
   
 api:
   payment:
-    url: http://payment:8082          
+    url: http://payment:8080         
