@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    _PROJECT_NAME: "starcoffee-order" #ECR의 Repository의 명칭
+    _PROJECT_NAME: "user17-star-order" #ECR의 Repository의 명칭
 
 phases:
   install:
@@ -27,7 +27,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-     # - cd   order # starcoffee > order 경로로 이동해서 build 처리
+      - cd   order # starcoffee > order 경로로 이동해서 build 처리
       - mvn package -Dmaven.test.skip=true
       - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$_PROJECT_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION  .
   post_build:
