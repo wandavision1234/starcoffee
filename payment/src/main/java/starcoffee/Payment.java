@@ -30,8 +30,6 @@ public class Payment {
         BeanUtils.copyProperties(this, paymentApporved);
         paymentApporved.publishAfterCommit();
 
-
-
     }
     @PostUpdate
     public void onPostUpdate(){
